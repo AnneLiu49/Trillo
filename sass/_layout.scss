@@ -1,33 +1,70 @@
 .container {
-    max-width: 120rem;
-    margin: 8rem auto;
+    max-width: 120em;
+    margin: 8em auto;
     background-color: var(--grey-light-2);
     box-shadow: var(--shadow-dark);
-
-
-    
     min-height: 50rem;
+
+
+    //desktop first strategy
+    //css does not allow media var, but sass does
+    @media only screen and (max-width:75em) {
+        margin: 0;
+    } 
+
+    @media only screen and ()
 
 }
 
 .header {
+    font-size: 1.2rem;
     height: 7rem;
     background-color: #fff;
-    border-bottom: var(--color-grey-light-2);
+    border-bottom: 1px solid var(--grey-light-2);
+    // flex box for header section
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.conent {
+.content {
     display: flex;
 }
 
 .sidebar {
-    background-color: var(--primary-color-dark-1);
+    background-color: var(--grey-dark-1);
     flex: 0 0 18%;
     //does not grow or shrink 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .hotel-view{
-    background-color: #fff;
     flex: 1;//take all the avaliable space
+}
 
+.detail {
+    font-size: 1.4rem;
+    display: flex;
+    padding: 4.5rem;
+}
+
+.description {
+    font-size: 1.4rem;
+    background-color: #fff;
+    box-shadow:  var(--shadow-light);
+    flex: 0 0 60%;
+    margin-right: 4.5rem;
+    border-bottom: 1px solid var(--grey-light-3);
+    background-color: var(--grey-light-1);
+    padding: 3rem;
+
+}
+
+.user-reviews {
+    flex:1;//occupy the remaining space
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
